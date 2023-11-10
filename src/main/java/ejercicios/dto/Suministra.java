@@ -1,5 +1,6 @@
 package ejercicios.dto;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,11 +19,11 @@ public class Suministra {
 	private int id;
 	
 	@ManyToOne
-	@JoinColumn(name = "codigo_pieza")
+	@JoinColumn(name = "cod_pieza")
 	private Pieza pieza;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_proveedor")
+	@JoinColumn(name = "id_prov")
 	private Proveedor proveedor;
 	
 	private int precio;
@@ -71,4 +72,8 @@ public class Suministra {
 		this.precio = precio;
 	}
 	
+	@Override
+	public String toString() {
+		return "Suministra [id=" + id + ", pieza=" + pieza + ", proveedor=" + proveedor + ", precio=" + precio + "]";
+	}
 }

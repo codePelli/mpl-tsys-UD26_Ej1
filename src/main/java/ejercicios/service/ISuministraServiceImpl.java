@@ -13,7 +13,6 @@ import ejercicios.dto.Suministra;
 public class ISuministraServiceImpl implements ISuministraService{
 
 	@Autowired
-	@Lazy
 	SuministraDAO iSumServ;
 	
 	@Override

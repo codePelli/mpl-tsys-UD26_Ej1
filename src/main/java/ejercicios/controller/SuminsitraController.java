@@ -21,35 +21,35 @@ import ejercicios.service.ISuministraServiceImpl;
 public class SuminsitraController {
 
 	@Autowired
-	private ISuministraService iServImp;
+	private ISuministraService iServ;
 	
 	@GetMapping("/list")
 	public List<Suministra> allSuministra(){
 		
-		return iServImp.listSuministra();
+		return iServ.listSuministra();
 	}
 	
 	@GetMapping("/{id}")
 	public Suministra sumPorId(@PathVariable int id) {
 		
-		return iServImp.sumPorId(id);
+		return iServ.sumPorId(id);
 	}
 	
 	@PostMapping("/add")
 	public Suministra saveSum(@RequestBody Suministra suministra) {
 		
-		return iServImp.saveSuministra(suministra);
+		return iServ.saveSuministra(suministra);
 	}
 	
 	@PutMapping("/{id}")
 	public Suministra updateSum(@PathVariable int id, @RequestBody Suministra suministra) {
 		
-		return iServImp.updateSuministra(suministra);
+		return iServ.updateSuministra(suministra);
 	}
 	
 	@DeleteMapping("/{id}")
 	public void deleteSum(@PathVariable int id) {
 		
-		iServImp.deleteSuministra(id);
+		iServ.deleteSuministra(id);
 	}
 }

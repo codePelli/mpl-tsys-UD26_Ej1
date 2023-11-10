@@ -13,7 +13,6 @@ import ejercicios.dto.Pieza;
 public class IPiezaServiceImpl implements IPiezaService{
 
 	@Autowired
-	@Lazy
 	private PiezaDAO piezaServ;
 	
 	@Override

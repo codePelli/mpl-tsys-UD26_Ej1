@@ -15,7 +15,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "pieza")
+@Table(name = "piezas")
 public class Pieza {
 	
 	@Id
@@ -25,6 +25,7 @@ public class Pieza {
 	  
 	@OneToMany(mappedBy="pieza")
 	private List<Suministra> suministra;
+
 
 	public Pieza() {
 		super();
@@ -60,4 +61,8 @@ public class Pieza {
 		this.suministra = suministra;
 	}
 
+	@Override
+	public String toString() {
+		return "Pieza [codigo=" + codigo + ", nombre=" + nombre + ", suministra=" + suministra + "]";
+	}
 }

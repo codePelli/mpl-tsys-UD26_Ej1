@@ -13,8 +13,8 @@ import ejercicios.dto.Proveedor;
 public class IProveedorServiceImpl implements IProveedorService{
 
 	@Autowired
-	@Lazy
 	ProveedorDAO iProvServ;
+	
 	@Override
 	public List<Proveedor> listProv() {
 		// TODO Auto-generated method stub
