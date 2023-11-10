@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ejercicios.dto.Suministra;
+import ejercicios.service.ISuministraService;
 import ejercicios.service.ISuministraServiceImpl;
 
 @RestController
@@ -20,7 +21,7 @@ import ejercicios.service.ISuministraServiceImpl;
 public class SuminsitraController {
 
 	@Autowired
-	private ISuministraServiceImpl iServImp;
+	private ISuministraService iServImp;
 	
 	@GetMapping("/list")
 	public List<Suministra> allSuministra(){

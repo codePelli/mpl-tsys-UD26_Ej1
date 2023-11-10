@@ -1,5 +1,6 @@
 package ejercicios.dto;
 
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -18,30 +19,28 @@ import jakarta.persistence.Table;
 public class Pieza {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long codigo;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int codigo;
 	private String nombre;
 	  
-	@ManyToOne
-	@JoinColumn(name = "proveedor_id")
-	private Proveedor proveedor;
+	@OneToMany(mappedBy="pieza")
+	private List<Suministra> suministra;
 
 	public Pieza() {
 		super();
 	}
 
-	public Pieza(Long codigo, String nombre, Proveedor proveedor) {
+	public Pieza(int codigo, String nombre) {
 		super();
 		this.codigo = codigo;
 		this.nombre = nombre;
-		this.proveedor = proveedor;
 	}
 
-	public Long getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(Long codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 
@@ -53,11 +52,12 @@ public class Pieza {
 		this.nombre = nombre;
 	}
 
-	public Proveedor getProveedor() {
-		return proveedor;
+	public List<Suministra> getSuministra() {
+		return suministra;
 	}
 
-	public void setProveedor(Proveedor proveedor) {
-		this.proveedor = proveedor;
+	public void setSuministra(List<Suministra> suministra) {
+		this.suministra = suministra;
 	}
+
 }

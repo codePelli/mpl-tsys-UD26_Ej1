@@ -11,10 +11,10 @@ public interface IPiezaService {
 	
 	Pieza savePieza(Pieza pieza);
 	
-	Pieza piezaPorCodigo(Long codigo);
+	Pieza piezaPorCodigo(int codigo);
 	
 	Pieza updatePieza(Pieza pieza);
 	
-	void deletePieza(Long codigo);
+	void deletePieza(int codigo);
 
 }

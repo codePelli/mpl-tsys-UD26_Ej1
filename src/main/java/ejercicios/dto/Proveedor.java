@@ -9,7 +9,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Proveedor")
+@Table(name = "proveedor")
 public class Proveedor {
 	
 	@Id
@@ -21,20 +21,20 @@ public class Proveedor {
 	}
 	
 	@OneToMany(mappedBy = "proveedor")
-	private List<Pieza> piezas;
-
-	public List<Pieza> getPiezas() {
-		return piezas;
-	}
-
-	public void setPiezas(List<Pieza> piezas) {
-		this.piezas = piezas;
-	}
-
+	private List<Suministra> suministra;
+	
 	public Proveedor(String id, String nombre) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
+	}
+	
+	public List<Suministra> getSuministra() {
+		return suministra;
+	}
+
+	public void setSuministra(List<Suministra> suministra) {
+		this.suministra = suministra;
 	}
 
 	public String getId() {

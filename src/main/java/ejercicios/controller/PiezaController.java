@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import ejercicios.dto.Pieza;
+import ejercicios.service.IPiezaService;
 import ejercicios.service.IPiezaServiceImpl;
 
 @RestController
@@ -20,7 +21,7 @@ import ejercicios.service.IPiezaServiceImpl;
 public class PiezaController {
 
 	@Autowired
-	private IPiezaServiceImpl piezaServ;
+	private IPiezaService piezaServ;
 	
     @PostMapping("/add")
     public Pieza insertProveedor(@RequestBody Pieza pieza) {
@@ -35,13 +36,13 @@ public class PiezaController {
     }
     
     @GetMapping("/{codigo}")
-    public Pieza piezaPorCod(@PathVariable Long codigo) {
+    public Pieza piezaPorCod(@PathVariable int codigo) {
     	
     	return piezaServ.piezaPorCodigo(codigo);
     }
     
     @PutMapping("/{codigo}")
-    public Pieza updatePieza(@PathVariable(name = "codigo") Long codigo, @RequestBody Pieza pieza) {
+    public Pieza updatePieza(@PathVariable(name = "codigo") int codigo, @RequestBody Pieza pieza) {
     	
         Pieza piezaSeleccionada = piezaServ.piezaPorCodigo(codigo);
 
@@ -59,7 +60,7 @@ public class PiezaController {
     }
     
     @DeleteMapping("/{codigo}")
-    public void deletePieza(@PathVariable(name = "codigo")Long codigo) {
+    public void deletePieza(@PathVariable(name = "codigo")int codigo) {
     	
     	piezaServ.deletePieza(codigo);
     }

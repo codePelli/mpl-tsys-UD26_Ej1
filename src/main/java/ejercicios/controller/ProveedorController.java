@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import ejercicios.dto.Pieza;
 import ejercicios.dto.Proveedor;
+import ejercicios.service.IProveedorService;
 import ejercicios.service.IProveedorServiceImpl;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
@@ -23,7 +24,7 @@ import jakarta.persistence.ManyToMany;
 public class ProveedorController {
 
 	@Autowired
-	private IProveedorServiceImpl IProveedorServiceImpl;
+	private IProveedorService IProveedorServiceImpl;
 	
     @PostMapping("/add")
     public Proveedor insertProveedor(@RequestBody Proveedor proveedor) {

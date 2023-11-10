@@ -22,18 +22,21 @@ public class Suministra {
 	private Pieza pieza;
 	
 	@ManyToOne
-	@JoinColumn(name = "proveedor_id")
+	@JoinColumn(name = "id_proveedor")
 	private Proveedor proveedor;
+	
+	private int precio;
 
 	public Suministra() {
 		super();
 	}
 
-	public Suministra(int id, Pieza pieza, Proveedor proveedor) {
+	public Suministra(int id, Pieza pieza, Proveedor proveedor, int precio) {
 		super();
 		this.id = id;
 		this.pieza = pieza;
 		this.proveedor = proveedor;
+		this.precio = precio;
 	}
 
 	public int getId() {
@@ -58,6 +61,14 @@ public class Suministra {
 
 	public void setProveedor(Proveedor proveedor) {
 		this.proveedor = proveedor;
+	}
+	
+	public int getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(int precio) {
+		this.precio = precio;
 	}
 	
 }

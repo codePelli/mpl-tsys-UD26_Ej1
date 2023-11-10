@@ -29,7 +29,7 @@ public class IPiezaServiceImpl implements IPiezaService{
 	}
 
 	@Override
-	public Pieza piezaPorCodigo(Long codigo) {
+	public Pieza piezaPorCodigo(int codigo) {
 		// TODO Auto-generated method stub
 		return piezaServ.findById(codigo).get();
 	}
@@ -41,7 +41,7 @@ public class IPiezaServiceImpl implements IPiezaService{
 	}
 
 	@Override
-	public void deletePieza(Long codigo) {
+	public void deletePieza(int codigo) {
 		// TODO Auto-generated method stub
 		piezaServ.deleteById(codigo);
 	}
