@@ -19,11 +19,11 @@ public class Suministra {
 	private int id;
 	
 	@ManyToOne
-	@JoinColumn(name = "cod_pieza")
+	@JoinColumn(name = "codigo_pieza")
 	private Pieza pieza;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_prov")
+	@JoinColumn(name = "id_proveedor")
 	private Proveedor proveedor;
 	
 	private int precio;
@@ -74,6 +74,6 @@ public class Suministra {
 	
 	@Override
 	public String toString() {
-		return "Suministra [id=" + id + ", pieza=" + pieza + ", proveedor=" + proveedor + ", precio=" + precio + "]";
+		return "Suministra [pieza=" + pieza + ", proveedor=" + proveedor + ", precio=" + precio + "]";
 	}
 }
